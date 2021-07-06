@@ -10,7 +10,18 @@
         //兩秒跳出訊息
         setTimeout(function () {
             alert('HI BRO');
-        }, 2000)
+        }, 2000);
+
+        function getMessage01() {
+            alert('nice dude')
+        }
+
+        setTimeout(getMessage01, 5000);
+
+        function getMessage02(greeting, name) {
+            alert(`${greeting},${name}`);
+        }
+        setTimeout(getMessage02, 8000, 'Yo', 'Yen');
     </script>
 </head>
 
