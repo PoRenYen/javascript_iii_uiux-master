@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //建立基本函式
+        function say() {
+            console.log(`Hi Bro`);
+        }
+        //執行函式
+        say();
+
+        //帶有參數的函式
+        function greet01(name) {
+            console.log('Yen');
+        }
+        greet01(name);
+
+        //帶有多個參數的函式
+        function greet02(greeting, name) {
+            console.log(greeting + ', ' + name);
+        }
+        greet02('Hi', 'Alex');
+
+        //有回傳值的函式
+        function getMessage01() {
+            return 'goodjob!';
+        }
+        console.log(getMessage01());
+
+        //帶有參數，同時回傳值的函式
+        function gotMessage02(name) {
+            return 'good job Bro' + name;
+        }
+        console.log(gotMessage02('Yen'));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

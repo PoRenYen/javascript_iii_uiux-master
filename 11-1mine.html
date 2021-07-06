@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //宣告 DATE物件
+        let date = new Date();
+        // 字串 鬱塞空值
+        let strTime = '';
+        //串接時間
+        strTime += date.getFullYear();//2021
+        strTime += date.getMonth() + 1;//7月會執行 出現6記得+1
+        strTime += date.getDate();//幾號
+        strTime += date.getHours();//幾時
+        strTime += date.getMinutes();//幾分
+        strTime += date.getSeconds();//幾秒
+        console.log(strTime);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

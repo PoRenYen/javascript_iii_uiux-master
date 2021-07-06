@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //以 function 這個關鍵字的來建立類別（class）
+        var Person = function (name, gender, age) {
+            //以 this 關鍵字作為實體本身
+            this.name = name;
+            this.gender = gender;
+            this.age = age;
+            this.getAge = function () {
+                return this.age;
+            }
+        };
+
+        //用 new 關鍵字來實體化（變成物件）
+        var person01 = new Person("Alice", "女", 22);
+        var person02 = new Person("Bill", "男", 18);
+
+        //輸出兩個 person 的 name
+        console.log(person01.name);
+        console.log(person02.name);
+
+        //取得 person 的 age 值
+        console.log(persin01.getAge());
+        console.log(persin02.getAge());
+
+    </script>
+
+</body>
+
+</html>
