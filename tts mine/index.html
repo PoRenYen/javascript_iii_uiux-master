@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./jquery.highlight-within-textarea.css">
+
+    <style>
+        textarea#txt {
+            width: 500px;
+            height: 500px;
+        }
+
+        audio#text_to_speech {
+            display: none;
+        }
+
+        .yellow {
+            background-color: rgb(255, 238, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <audio src="" id="text_to_speech" controls autoplay>
+        <source src="" type="audio/mpeg">
+    </audio>
+
+    <textarea id="tst"></textarea>
+    <button id="btn_play">PLAY</button>
+    <script src="./jquery.highlight-within-textarea.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script>
+        // 放置切割後文的陣列(透過斷行、逗號等符號分割儲存)
+        let arr;
+        // 指定第幾句作為首播(使用陣列索引)
+        let index = 0;
+        document.querySelector('textarea#txt').addEventListener('focusout', function (event) {
+            let content = document.querySelector('textarea#txt').value;
+            let regex = /\n|,|\.|，|。/;
+            arr = content.split(regex);
+
+            for (let key in arr) {
+                if (arr[key] === '') delete arr[key];
+            }
+            let arrtmp = [];
+            for (let value of arr) {
+                if (value != undefined) arrTmp.push(value);
+            };
+            arr = arrTmp;
+            // console.log(arr);
+        });
+
+        function getAudio(idx) {
+
+            $post("https://darreninfo.cc/tts/sound.php", { q: arr[idex] }, function (objJson) {
+                if (objJson4['success']) {
+                    let audio = document.querySelector('audio#text_to_speech');
+                    audoo.querySelector('source').setAttribute('src', objJson['link']);
+                    audio.load();
+                    audio.play();
+                }
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
