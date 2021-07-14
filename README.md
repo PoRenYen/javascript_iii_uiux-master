@@ -1,6 +1,9 @@
 # javascript_iii_uiux
 資策會 UIUX 班 JavaScript 課程
 
+## 上課影片播放列表
+[YouTube Playlist: MMMH61](https://www.youtube.com/playlist?list=PLV4FeK54eNbzDZLD50LFpkI3AZ4FJ-j8o "MMMH61")
+
 ## 安裝工具
 請先安裝 Visual Studio Code，包括以下擴充功能（extensions）：
 - HTML Boilerplate

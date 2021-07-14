@@ -9,7 +9,18 @@
 </head>
 
 <body>
+    <script>
+        //re=Regular Expression
+        //re.test()=>測試字串是否配對true false
+        let str01 = 'cccA0001'
+        let re01 = /^[A-Z]\d{9}$/;
+        if (re01.test(str01)) {
+            console.log(`re.test(str)回傳解果:ture`);
+        } else {
+            console.log(`re.test(str)回傳解果:false`);
+        }
 
+    </script>
 </body>
 
 </html>
