@@ -15,7 +15,7 @@
 
 
     <script>
-        document.querySelector('button#btn-request').addEventListener('click', function (event) {
+        document.querySelector('button#btn_request').addEventListener('click', function (event) {
             //取得URL
             let url = document.querySelector('input#url').value;
             if (url == '') {
@@ -58,7 +58,7 @@
                         a.target = '_blank';//<a href=""target"_blank"></a>
                         //新增放到a元素的內文 innerText
 
-                        let textNode = document.createElement(o['id']);
+                        let textNode = document.createTextNode(o['id']);
                         a.appendChild(textNode);//<a href="" target="_blank">xxxxxx</a>
 
                         //將img與a分疊放到LI當中
