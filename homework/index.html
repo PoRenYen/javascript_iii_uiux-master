@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HW</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <!-- JQ ui css-->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
@@ -14,30 +16,30 @@
 
     <style>
         body {
-            background-image: url(https://img.ttshow.tw/images/author/Lindsey/1595038166748.jpg);
+            background-image: url(./sorrymoney.jpg);
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
             background-size: cover;
-        }
-
-        .box {
-            width: 100%;
         }
     </style>
 
 </head>
 
 <body>
-    <div class="box">
-        <div class="container">
-            <div class="row">
-                <input type="text" id="url" placeholder="請輸入LINE官方貼圖" value="" style="width: 250px;">
-                <button id="btn_request">取得LINE官方貼圖</button>
-                <ul id="myList"></ul>
-            </div>
+    <div class="container" style="margin-left: 700px;margin-top: 120px;
+    ">
+        <div>
+            <a href="https://store.line.me/stickershop/product/15911774/en?ref=gnsh_stickerDetail"
+                style="margin-left:30px;margin-bottom: 30px;">
+                記得在新分業開啟然後複製網址ㄉ酷東西</a>
+        </div>
+        <div style="margin-top: 30px;">
+            <input type=" text" id="url" placeholder="請輸入LINE官方貼圖" value="" style="width: 250px;">
+            <button type="button" class="btn btn-success" id="btn_request">取得非免費ㄉLINE官方貼圖</button>
         </div>
     </div>
+    <ul id="myList" style="display: flex;flex-wrap: wrap;padding-left: 75px;padding-top: 250px;gap:20px"></ul>
     <!-- jQ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -51,11 +53,9 @@
         document.querySelector('button#btn_request'), addEventListener('click', function (event) {
             let url = document.querySelector('input#url').value;
 
-            if (url === '') {
-                alert('請輸入官方貼圖');
-            }
 
-            $get('http://darreninfo.cc:5003/linesticker', { url: url }, function (obj) {
+
+            $.get('http://darreninfo.cc:5003/linesticker', { url: url }, function (obj) {
 
                 let ul = document.querySelector('ul#myList');
 
@@ -70,16 +70,13 @@
                         for (let o of obj["results"]) {
                             let li = document.createElement("li");
 
-                            li.style.position = "absolute";
-                            li.style.top = (Math.floor(Math.random() * 500) + 1) + 'px';
-                            li.style.left = (Math.floor(Math.random() * 1200) + 1) + 'px';
 
                             li.style.width = '150px';
                             li.style.height = '150px';
                             li.style.border = '1px solid';
                             li.style.borderRadius = '15%';
                             li.style.listStyle = 'none';
-                            li.style.backgroundColor = '#ccc';
+                            li.style.backgroundColor = '#FAF3E9';
                             li.style.boxShadow = 'rgba(0,0,0,0.25) 0px 5px 15px';
 
 
@@ -90,8 +87,16 @@
 
                             li.appendChild(img);
                             ul.appendChild(li);
-
                         }
+
+                        $('ul#myList li').each(function () {
+                            $(this).jellySlider({
+                                loop: true,
+                                view: 6,
+                                move: 3,
+                                margin: 10,
+                            });
+                        });
                     }
                 } else {
                     console.log(obj);
