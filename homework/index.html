@@ -22,12 +22,21 @@
             background-position: center;
             background-size: cover;
         }
+
+        li {
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        li>img {
+            transform: translateZ(20px);
+        }
     </style>
 
 </head>
 
 <body>
-    <div class="container" style="margin-left: 700px;margin-top: 105px;
+    <div class="container" style="margin-left: 700px;margin-top: 115px;
     ">
         <div>
             <a href="https://store.line.me/stickershop/product/15911774/en?ref=gnsh_stickerDetail"
@@ -39,9 +48,11 @@
             <button type="button" class="btn btn-success" id="btn_request">取得非免費ㄉLINE官方貼圖</button>
         </div>
     </div>
-    <ul data-tilt data-tilt-reset="false" id="myList"
-        style="display: flex;flex-wrap: wrap;padding-left: 75px;padding-top: 250px;gap:20px">
+    <!-- data-tilt data-tilt-reset="false" -->
+    <ul id="myList" style="display: flex;flex-wrap: wrap;padding-left: 75px;padding-top: 250px;gap:20px">
     </ul>
+    <div class="li" data-tilt data-tilt-max="50" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-glare
+        data-tilt-max-glare="0.8"></div>
     <!-- jQ -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
@@ -90,6 +101,7 @@
                             li.appendChild(img);
                             ul.appendChild(li);
                         }
+                        VanillaTilt.init(document.querySelectorAll("ul#myList li"));
                     }
                 } else {
                     console.log(obj);
